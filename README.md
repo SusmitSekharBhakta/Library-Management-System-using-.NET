@@ -6,6 +6,7 @@ This project is a simple Library Management System built using C# in a console a
 **Features:**
 
 _Book Management:_
+
     1. Add new books.
     2. View the list of available books.
     3. Borrow a book and reduce available copies.
@@ -13,11 +14,12 @@ _Book Management:_
 
 
 _Member Management:_
+
     1. Register new members.
     2. View the list of registered members.
 
 _Search Functionality:_
-Search for books by title or author.
+ Search for books by title or author.
 
 _Advanced Feature (Future Enhancements and open for contribution):_
 
@@ -27,10 +29,12 @@ _Advanced Feature (Future Enhancements and open for contribution):_
 
 
 **How to Run the Project**
+
     1. Clone this repository to your local machine or open it in an online IDE.
     2. Navigate to the src/ folder.
     3. Run the Program.cs file. In most online compilers, you'll find a "Run" button.
     4. Use the menu options displayed in the console to interact with the system.
 
 **Author and License**
+
 Developed as a demonstration project using .Net with C# by **Susmit Sekhar Bhakta**. It is an open-sourse project, suggestions and contributions are welcome! 
