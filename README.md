@@ -32,7 +32,7 @@ _Advanced Feature (Future Enhancements and open for contribution):_
 
     1. Clone this repository to your local machine or open it in an online IDE.
     2. Navigate to the src/ folder.
-    3. Run the Program.cs file. In most online compilers, you'll find a "Run" button.
+    3. Run the _Program.cs, Book.cs, Member.cs_ files. In most online compilers, you'll find a "Run" button.
     4. Use the menu options displayed in the console to interact with the system.
 
 **Author and License**
