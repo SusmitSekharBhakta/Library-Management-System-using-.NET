@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+// main program : Program.cs
 class Program
 {
     // Data structures to store books and members
@@ -11,7 +11,7 @@ class Program
     {
         SeedData(); // Prepopulate some data
 
-        while (true)
+        while (true)    // basic Library system options
         {
             Console.Clear();
             Console.WriteLine("Library Management System\n");
@@ -22,7 +22,8 @@ class Program
             Console.WriteLine("5. Exit");
             Console.Write("Enter your choice: ");
 
-            switch (Console.ReadLine())
+            // taking input from User
+            switch (Console.ReadLine())   
             {
                 case "1": ManageBooks(); break;
                 case "2": ManageMembers(); break;
@@ -36,7 +37,7 @@ class Program
 
     static void ManageBooks()
     {
-        while (true)
+        while (true)    // Basic options for book management
         {
             Console.Clear();
             Console.WriteLine("Manage Books\n");
@@ -45,7 +46,7 @@ class Program
             Console.WriteLine("3. Go Back");
             Console.Write("Enter your choice: ");
 
-            switch (Console.ReadLine())
+            switch (Console.ReadLine())  // taking user input 
             {
                 case "1":
                     Console.Write("Enter Book Title: ");
@@ -77,7 +78,7 @@ class Program
 
     static void ManageMembers()
     {
-        while (true)
+        while (true)      // Library members' data mgm
         {
             Console.Clear();
             Console.WriteLine("Manage Members\n");
@@ -86,7 +87,7 @@ class Program
             Console.WriteLine("3. Go Back");
             Console.Write("Enter your choice: ");
 
-            switch (Console.ReadLine())
+            switch (Console.ReadLine())  // Taking user input
             {
                 case "1":
                     Console.Write("Enter Member Name: ");
@@ -110,7 +111,7 @@ class Program
             }
         }
     }
-
+// handling the case of borrowing book
     static void BorrowBook()
     {
         Console.Clear();
@@ -142,7 +143,7 @@ class Program
         Console.WriteLine("Book borrowed successfully! Press Enter to continue.");
         Console.ReadLine();
     }
-
+// Handling return book case
     static void ReturnBook()
     {
         Console.Clear();
@@ -163,12 +164,14 @@ class Program
         Console.WriteLine("Book returned successfully! Press Enter to continue.");
         Console.ReadLine();
     }
-
+// Primary data prepopulation
     static void SeedData()
     {
-        books.Add(new Book { Title = "The Great Gatsby", Author = "F. Scott Fitzgerald", CopiesAvailable = 3 });
+        books.Add(new Book { Title = "The Great Gatsby", Author = "F. Scott Fitzgerald", CopiesAvailable = 4 });
         books.Add(new Book { Title = "1984", Author = "George Orwell", CopiesAvailable = 2 });
+        members.Add(new Member { Name = "Susmit" });
         members.Add(new Member { Name = "Alice" });
-        members.Add(new Member { Name = "Bob" });
+        members.Add(new Member { Name = "Priyanka" });
+        members.Add(new Member { Name = "Selena" });
     }
 }
