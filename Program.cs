@@ -34,7 +34,7 @@ class Program
             }
         }
     }
-
+    // defining book management method
     static void ManageBooks()
     {
         while (true)    // Basic options for book management
@@ -48,7 +48,7 @@ class Program
 
             switch (Console.ReadLine())  // taking user input 
             {
-                case "1":
+                case "1":   // for adding a book
                     Console.Write("Enter Book Title: ");
                     string title = Console.ReadLine();
                     Console.Write("Enter Author: ");
@@ -60,7 +60,7 @@ class Program
                     Console.WriteLine("Book added successfully! Press Enter to continue.");
                     Console.ReadLine();
                     break;
-                case "2":
+                case "2":    // for viewing available books
                     Console.Clear();
                     Console.WriteLine("Books List:\n");
                     foreach (var book in books)
@@ -75,7 +75,7 @@ class Program
             }
         }
     }
-
+    // defining member management method
     static void ManageMembers()
     {
         while (true)      // Library members' data mgm
@@ -89,14 +89,14 @@ class Program
 
             switch (Console.ReadLine())  // Taking user input
             {
-                case "1":
+                case "1":   // for adding a new member
                     Console.Write("Enter Member Name: ");
                     string name = Console.ReadLine();
                     members.Add(new Member { Name = name });
                     Console.WriteLine("Member added successfully! Press Enter to continue.");
                     Console.ReadLine();
                     break;
-                case "2":
+                case "2":    // for viewing member's list
                     Console.Clear();
                     Console.WriteLine("Members List:\n");
                     foreach (var member in members)
@@ -111,12 +111,12 @@ class Program
             }
         }
     }
-// handling the case of borrowing book
+    // defining borrowing book method
     static void BorrowBook()
     {
         Console.Clear();
         Console.WriteLine("Borrow Book\n");
-
+        // first checking memeber is available or not
         Console.Write("Enter Member Name: ");
         string memberName = Console.ReadLine();
         var member = members.Find(m => m.Name.Equals(memberName, StringComparison.OrdinalIgnoreCase));
@@ -127,7 +127,7 @@ class Program
             Console.ReadLine();
             return;
         }
-
+        // next checking entered book name is available or not
         Console.Write("Enter Book Title: ");
         string bookTitle = Console.ReadLine();
         var book = books.Find(b => b.Title.Equals(bookTitle, StringComparison.OrdinalIgnoreCase));
@@ -138,17 +138,17 @@ class Program
             Console.ReadLine();
             return;
         }
-
+        // if available then after borrinwing lowering down the previously available copies
         book.CopiesAvailable--;
         Console.WriteLine("Book borrowed successfully! Press Enter to continue.");
         Console.ReadLine();
     }
-// Handling return book case
+// defining return book method
     static void ReturnBook()
     {
         Console.Clear();
         Console.WriteLine("Return Book\n");
-
+        // checking entered book name present in book list or not
         Console.Write("Enter Book Title: ");
         string bookTitle = Console.ReadLine();
         var book = books.Find(b => b.Title.Equals(bookTitle, StringComparison.OrdinalIgnoreCase));
@@ -159,12 +159,12 @@ class Program
             Console.ReadLine();
             return;
         }
-
+        // after returning book incrementing the copies available
         book.CopiesAvailable++;
         Console.WriteLine("Book returned successfully! Press Enter to continue.");
         Console.ReadLine();
     }
-// Primary data prepopulation
+    // Primary data prepopulation
     static void SeedData()
     {
         books.Add(new Book { Title = "The Great Gatsby", Author = "F. Scott Fitzgerald", CopiesAvailable = 4 });
